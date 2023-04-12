@@ -290,5 +290,23 @@ function decrementCounter(num)
 
 function search()
 {
+  const searchValue = document.getElementById("searchInput").value.toLowerCase();
+
+  const cards = document.getElementsByClassName("col");
+
+  for (var i = 0; i < cards.length; i++) 
+  {
+    var card = cards[i];
+    var cardId = card.getAttribute("id").replace("-", " ").toLowerCase();
+
+    if (cardId.includes(searchValue)) 
+      card.style.display = "block";
+    else 
+      card.style.display = "none";
+  }
+}
+
+function stopSearch()
+{
   
 }

@@ -37,6 +37,7 @@ var count1 = count2 = count3 = count4 = count5 = count6 = 0;
 
 function incrementCounter(num)
 {
+  addToCart(num);
   if(num == 1)
   {
     const counter1 = document.getElementById('counter1');
@@ -81,6 +82,7 @@ function decrementCounter(num)
   {
     if (count1 > 0)
     {
+      removeFromCart(num);
       const counter1 = document.getElementById('counter1');
       count1--;
       counter1.innerHTML = count1;
@@ -90,6 +92,7 @@ function decrementCounter(num)
   {
     if (count2 > 0)
     {
+      removeFromCart(num);
       const counter2 = document.getElementById('counter2');
       count2--;
       counter2.innerHTML = count2;
@@ -99,6 +102,7 @@ function decrementCounter(num)
   {
     if (count3 > 0)
     {
+      removeFromCart(num);
       const counter3 = document.getElementById('counter3');
       count3--;
       counter3.innerHTML = count3;
@@ -108,6 +112,7 @@ function decrementCounter(num)
   {
     if (count4 > 0)
     {
+      removeFromCart(num);
       const counter4 = document.getElementById('counter4');
       count4--;
       counter4.innerHTML = count4;
@@ -117,6 +122,7 @@ function decrementCounter(num)
   {
     if (count5 > 0)
     {
+      removeFromCart(num);
       const counter5 = document.getElementById('counter5');
       count5--;
       counter5.innerHTML = count5;
@@ -126,6 +132,7 @@ function decrementCounter(num)
   {
     if (count6 > 0)
     {
+      removeFromCart(num);
       const counter6 = document.getElementById('counter6');
       count6--;
       counter6.innerHTML = count6;

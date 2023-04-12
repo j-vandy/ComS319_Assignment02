@@ -1,4 +1,9 @@
 function displayBrowseView() {
+  clearCartView();
+  if (document.getElementById("ConfirmationView").style.display == 'block')
+  {
+    clearConfirmationView();
+  }
   document.getElementById("BrowseView").style.display = 'block';
   document.getElementById("CartView").style.display = 'none';
   document.getElementById("ConfirmationView").style.display = 'none';
@@ -6,14 +11,15 @@ function displayBrowseView() {
 }
 
 function displayCartView() {
+  updateCartView();
   document.getElementById("BrowseView").style.display = 'none';
   document.getElementById("CartView").style.display = 'block';
   document.getElementById("ConfirmationView").style.display = 'none';
-  updateCart();
   return false;
 }
 
 function displayConfirmationView() {
+  updateConfirmationView();
   document.getElementById("BrowseView").style.display = 'none';
   document.getElementById("CartView").style.display = 'none';
   document.getElementById("ConfirmationView").style.display = 'block';
@@ -21,10 +27,9 @@ function displayConfirmationView() {
 }
 
 // TODO need to reset the cart list when you go back to BrowseView
-// Update productAndPrice to also include description
 
 var cart = [];
-var productAndPrice = [["Cat1", 100], ["Cat2", 200], ["Cat3", 300], ["Cat4", 400], ["Cat5", 500], ["Cat6", 600]];
+var productAndPrice = [["Savannah", 80, "Crossing of a serval with a domestic cat."], ["Sphynx", 100, "The ugly hairless cat."], ["Scottish Fold", 10, "Named after their genetic ear folds."], ["Domestic Short-Hair", 1000, "MOGGIES!"], ["Caracal", 70, "Handsome devils."], ["Munchkin", 50, "Failed dreams of being in NBA."]];
 var totalCost = 0;
 
 function addToCart(num)
@@ -39,7 +44,7 @@ function removeFromCart(num)
     cart.splice(index, 1);
 }
 
-function updateCart()
+function updateCartView()
 {
   document.getElementById('cartCount').innerHTML = cart.length;
 
@@ -64,9 +69,90 @@ function updateCart()
   ul.appendChild(li);
 }
 
-function clearCart()
+function clearCartView()
 {
+  // Remove all cart items from list
+  var ul = document.getElementById("list");
+  while (ul.firstChild)
+  {
+    ul.removeChild(ul.firstChild);
+  }
+  totalCost = 0;
+}
 
+function updateConfirmationView()
+{
+  document.getElementById('cartNum').innerHTML = cart.length;
+  totalCost = 0;
+  var numItems = [0,0,0,0,0,0];
+  for (let i = 0; i < cart.length; i++)
+  {
+    numItems[cart[i]]++;
+  }
+  for (let i = 0; i < numItems.length; i++)
+  {
+    createListElementConfirm(i, numItems[i]);
+  }
+  var ul = document.getElementById("listConfirm");
+  var li = document.createElement("li");
+  li.className = "list-group-item d-flex justify-content-between";
+  var span = document.createElement("span");
+  span.textContent = "Total (USD)";
+  li.appendChild(span);
+  var strong = document.createElement("strong");
+  strong.textContent = "$" + totalCost;
+  li.appendChild(strong);
+  ul.appendChild(li);
+}
+
+function clearConfirmationView()
+{
+  var ul = document.getElementById("listConfirm");
+  while (ul.firstChild)
+  {
+    ul.removeChild(ul.firstChild);
+  }
+  totalCost = 0;
+  cart = [];
+
+  // reset home page
+  document.getElementById('globalCounter').innerHTML = cart.length;
+  count1 = 0;
+  count2 = 0;
+  count3 = 0;
+  count4 = 0;
+  count5 = 0;
+  count6 = 0;
+  document.getElementById('counter1').innerHTML = 0;
+  document.getElementById('counter2').innerHTML = 0;
+  document.getElementById('counter3').innerHTML = 0;
+  document.getElementById('counter4').innerHTML = 0;
+  document.getElementById('counter5').innerHTML = 0;
+  document.getElementById('counter6').innerHTML = 0;
+}
+
+function createListElementConfirm(item, count)
+{
+  if (count <= 0 || item > 5 || item < 0) return false;
+  var ul = document.getElementById("listConfirm");
+  var li = document.createElement("li");
+  li.className = "list-group-item d-flex justify-content-between lh-sm";
+  var div = document.createElement("div");
+  var h6 = document.createElement("h6");
+  h6.className = "my-0";
+  h6.textContent = productAndPrice[item][0];
+  div.appendChild(h6);
+  var small = document.createElement("small");
+  small.className = "text-muted";
+  small.textContent = productAndPrice[item][2];
+  div.appendChild(small);
+  li.appendChild(div);
+  var span = document.createElement("span");
+  span.className = "text-muted";
+  span.textContent = "$" + productAndPrice[item][1] + " x " + count;
+  totalCost += productAndPrice[item][1] * count;
+  li.appendChild(span);
+  ul.appendChild(li);
 }
 
 function createListElement(item, count)
@@ -82,7 +168,7 @@ function createListElement(item, count)
   div.appendChild(h6);
   var small = document.createElement("small");
   small.className = "text-muted";
-  small.textContent = "Brief description";
+  small.textContent = productAndPrice[item][2];
   div.appendChild(small);
   li.appendChild(div);
   var span = document.createElement("span");

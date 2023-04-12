@@ -348,7 +348,7 @@
                 </div>
                 <div class="col-md-7 col-lg-8">
                     <h4 class="mb-3">Billing address</h4>
-                    <form class="needs-validation" novalidate>
+                    <form onsubmit ="displayConfirmationView()" class="needs-validation">
                     <div class="row g-3">
                         <div class="col-sm-6">
                         <label for="firstName" class="form-label">First name</label>
@@ -403,6 +403,7 @@
                         <select class="form-select" id="state" required>
                             <option value="">Choose...</option>
                             <option>California</option>
+                            <option>Iowa</option>
                         </select>
                         <div class="invalid-feedback">
                             Please provide a valid state.
@@ -486,7 +487,7 @@
 
                     <hr class="my-4">
 
-                    <button class="w-100 btn btn-primary btn-lg" type="submit" onclick="displayConfirmationView()">Order</button>
+                    <button class="w-100 btn btn-primary btn-lg" type="submit" onclick="">Order</button>
                     </form>
                 </div>
                 </div>

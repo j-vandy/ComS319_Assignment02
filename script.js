@@ -19,6 +19,20 @@ function displayConfirmationView() {
   return false;
 }
 
+var cart = [];
+
+function addToCart(num)
+{
+  cart.push(num);
+}
+
+function removeFromCart(num)
+{
+  const index = cart.indexOf(num);
+  if (index != -1) 
+    cart.splice(index, 1);
+}
+
 var count1 = count2 = count3 = count4 = count5 = count6 = 0;
 
 function incrementCounter(num)

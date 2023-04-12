@@ -74,6 +74,7 @@ function incrementCounter(num)
     count6++;
     counter6.innerHTML = count6;
   }
+  document.getElementById('globalCounter').innerHTML = cart.length;
 }
 
 function decrementCounter(num) 
@@ -138,4 +139,5 @@ function decrementCounter(num)
       counter6.innerHTML = count6;
     }
   }
+  document.getElementById('globalCounter').innerHTML = cart.length;
 }

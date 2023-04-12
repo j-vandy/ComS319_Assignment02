@@ -26,10 +26,8 @@ function displayConfirmationView() {
   return false;
 }
 
-// TODO need to reset the cart list when you go back to BrowseView
-
 var cart = [];
-var productAndPrice = [["Savannah", 80, "Crossing of a serval with a domestic cat."], ["Sphynx", 100, "The ugly hairless cat."], ["Scottish Fold", 10, "Named after their genetic ear folds."], ["Domestic Short-Hair", 1000, "MOGGIES!"], ["Caracal", 70, "Handsome devils."], ["Munchkin", 50, "Failed dreams of being in NBA."]];
+var productAndPrice = [["Savannah", 80, "Crossing of a serval with a domestic cat.", "images/savannah.jpeg"], ["Sphynx", 100, "The ugly hairless cat.", "images/hairless_sphynx.jpg"], ["Scottish Fold", 10, "Named after their genetic ear folds.", "images/scottish_fold.jpg"], ["Domestic Short-Hair", 1000, "MOGGIES!", "images/grey_domestic_shorthair.png"], ["Caracal", 70, "Handsome devils.", "images/caracals.jpg"], ["Munchkin", 50, "Failed dreams of being in NBA.", "images/munchkincat.jpg"]];
 var totalCost = 0;
 
 function addToCart(num)
@@ -59,12 +57,29 @@ function updateCartView()
   }
   var ul = document.getElementById("list");
   var li = document.createElement("li");
-  li.className = "list-group-item d-flex justify-content-between";
+  li.className = "list-group-item d-flex justify-content-between lh-sm";
+  var div = document.createElement("div");
+  var h6 = document.createElement("h6");
+  h6.className = "my-0";
+  h6.textContent = "Tax";
+  div.appendChild(h6);
+  li.appendChild(div);
   var span = document.createElement("span");
+  span.className = "text-muted";
+  var tax = Math.round(totalCost * 0.069 * 100) / 100;
+  span.textContent = "$" + Number(tax).toFixed(2);
+  totalCost += tax;
+  li.appendChild(span);
+  ul.appendChild(li);
+
+  var ul = document.getElementById("list");
+  li = document.createElement("li");
+  li.className = "list-group-item d-flex justify-content-between";
+  span = document.createElement("span");
   span.textContent = "Total (USD)";
   li.appendChild(span);
   var strong = document.createElement("strong");
-  strong.textContent = "$" + totalCost;
+  strong.textContent = "$" + Number(totalCost).toFixed(2);
   li.appendChild(strong);
   ul.appendChild(li);
 }
@@ -95,12 +110,29 @@ function updateConfirmationView()
   }
   var ul = document.getElementById("listConfirm");
   var li = document.createElement("li");
+  li.className = "list-group-item d-flex justify-content-between lh-sm";
+  var div = document.createElement("div");
+  var h6 = document.createElement("h6");
+  h6.className = "my-0";
+  h6.textContent = "Tax";
+  div.appendChild(h6);
+  li.appendChild(div);
+  var span = document.createElement("span");
+  span.className = "text-muted";
+  var tax = Math.round(totalCost * 0.069 * 100) / 100;
+  span.textContent = "$" + Number(tax).toFixed(2);
+  totalCost += tax;
+  li.appendChild(span);
+  ul.appendChild(li);
+
+  var ul = document.getElementById("listConfirm");
+  var li = document.createElement("li");
   li.className = "list-group-item d-flex justify-content-between";
   var span = document.createElement("span");
   span.textContent = "Total (USD)";
   li.appendChild(span);
   var strong = document.createElement("strong");
-  strong.textContent = "$" + totalCost;
+  strong.textContent = "$" + Number(totalCost).toFixed(2);
   li.appendChild(strong);
   ul.appendChild(li);
 }
@@ -149,7 +181,7 @@ function createListElementConfirm(item, count)
   li.appendChild(div);
   var span = document.createElement("span");
   span.className = "text-muted";
-  span.textContent = "$" + productAndPrice[item][1] + " x " + count;
+  span.textContent = "$" + Number(productAndPrice[item][1]).toFixed(2) + " x " + count;
   totalCost += productAndPrice[item][1] * count;
   li.appendChild(span);
   ul.appendChild(li);
@@ -173,7 +205,7 @@ function createListElement(item, count)
   li.appendChild(div);
   var span = document.createElement("span");
   span.className = "text-muted";
-  span.textContent = "$" + productAndPrice[item][1] + " x " + count;
+  span.textContent = "$" + Number(productAndPrice[item][1]).toFixed(2) + " x " + count;
   totalCost += productAndPrice[item][1] * count;
   li.appendChild(span);
   ul.appendChild(li);

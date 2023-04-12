@@ -19,20 +19,14 @@ function displayConfirmationView() {
   return false;
 }
 
-var btnPlus = document.getElementById('btn-plus1');
-var btnMinus = document.getElementById('btn-minus1');
-var counter = document.getElementById('counter1');
-var count = 0;
-counter.textContent = count;
+var count1 = count2 = count3 = count4 = count5 = count6 = 0;
+var counter1 = document.getElementById('counter1');
 
-btnPlus.addEventListener('click', function() {
-  count++;
-  counter.textContent = count;
-});
-
-btnMinus.addEventListener('click', function() {
-  if (count > 0) {
-    count--;
-    counter.textContent = count;
+function incrementCounter(num)
+{
+  if(num == 1)
+  {
+    count1++;
+    counter1.innerHTML = count1;
   }
-});
+}

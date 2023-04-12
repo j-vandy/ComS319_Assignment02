@@ -1,3 +1,4 @@
+
 function displayBrowseView() {
   clearCartView();
   if (document.getElementById("ConfirmationView").style.display == 'block')

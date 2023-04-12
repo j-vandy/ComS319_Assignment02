@@ -296,17 +296,24 @@ function search()
 
   for (var i = 0; i < cards.length; i++) 
   {
-    var card = cards[i];
-    var cardId = card.getAttribute("id").replace("-", " ").toLowerCase();
+    var cardId = cards[i].getAttribute("id").replace("-", " ").toLowerCase();
 
     if (cardId.includes(searchValue)) 
-      card.style.display = "block";
+      cards[i].style.display = "block";
     else 
-      card.style.display = "none";
+      cards[i].style.display = "none";
   }
 }
 
 function stopSearch()
 {
-  
+  const cards = document.getElementsByClassName("col");
+
+  for (var i = 0; i < cards.length; i++) 
+  {
+    var card = cards[i];
+
+    card.style.display = "block";
+    document.getElementById("searchInput").value = "";
+  }
 }

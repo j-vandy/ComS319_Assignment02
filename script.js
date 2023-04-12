@@ -141,3 +141,8 @@ function decrementCounter(num)
   }
   document.getElementById('globalCounter').innerHTML = cart.length;
 }
+
+function search()
+{
+  
+}

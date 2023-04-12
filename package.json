@@ -1,0 +1,46 @@
+{
+    "cats" : [
+        {
+            "name": "Savannah",
+            "price": 80,
+            "path": "images/savannah.jpeg",
+            "description": "The Savannah is a breed of hybrid cat developed in the late 20th century from crossing a serval (Leptailurus serval) with a domestic cat (Felis catus).",
+            "shortDescription": "Crossing of a serval with a domestic cat."
+        },
+        {
+            "name": "Sphynx",
+            "price": 100,
+            "path": "images/hairless_sphynx.jpg",
+            "description": "The Sphynx cat (pronounced SFINGKS) also known as the Canadian Sphynx, is a breed of cat known for its lack of fur. Hairlessness in cats is a naturally occurring genetic mutation, and the Sphynx was developed through selective breeding of these animals, starting in the 1960s.",
+            "shortDescription": "The ugly hairless cat."
+        },
+        {
+            "name": "Scottish Fold",
+            "price": 10,
+            "path": "images/scottish_fold.jpg",
+            "description": "The Scottish Fold is a breed of domestic cat with a natural dominant gene mutation that affects cartilage throughout the body, causing the ears to \"fold\", bending forward and down towards the front of the head, which gives the cat what is often described as an \"owl-like\" appearance.",
+            "shortDescription": "Named after their genetic ear folds."
+        },
+        {
+            "name": "Domestic Short-Hair",
+            "price": 1000,
+            "path": "images/grey_domestic_shorthair.png",
+            "description": "A domestic short-haired cat is a cat possessing a coat of short fur, not belonging to any particular recognised cat breed. In Britain they are sometimes colloquially called moggies.",
+            "shortDescription": "MOGGIES!"
+        },
+        {
+            "name": "Caracal",
+            "price": 70,
+            "path": "images/caracals.jpg",
+            "description": "The caracal (Caracal caracal) is a medium-sized wild cat native to Africa, the Middle East, Central Asia, and arid areas of Pakistan and northwestern India. It is characterised by a robust build, long legs, a short face, long tufted ears, and long canine teeth.",
+            "shortDescription": "Handsome devils."
+        },
+        {
+            "name": "Munchkin",
+            "price": 50,
+            "path": "images/munchkincat.jpg",
+            "description": "The Munchkin, also known as Sausage Cat is a breed of cat characterized by its very short legs, which are caused by genetic mutation.",
+            "shortDescription": "Failed dreams of being in NBA."
+        }
+    ]
+}

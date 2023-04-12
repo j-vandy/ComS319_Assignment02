@@ -73,7 +73,7 @@
     <!-- WE MIGHT WANT TO USE A JSON FILE TO HOLD IMG/PRICE/DESCRIPTION -->
 
     <!-- BROWSE VIEW PAGE -->
-    <div id="BrowseView" style="display:block;">
+    <div id="BrowseView" style="display:none;">
         <!-- FOR AN EXAMPLE OF CHANGING PAGES -->
         <!-- <a class="navbar-brand" href="#home" onclick="goHome();">DHT11 Server</a> -->
 
@@ -103,7 +103,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
                     <strong>Album</strong>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation" onclick="displayCartView()">
                     <img src="images/shoppingcart.png" alt="Shopping Cart" style="width: 60px; height: 40px;">
                 </button>
                 </div>
@@ -278,15 +278,39 @@
 
 
     <!-- CART VIEW PAGE -->
-    <div id="CartView" style="display:none;">
+    <div id="CartView" style="display:block;">
+        <header>
+            <div class="collapse bg-dark" id="navbarHeader">
+                <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-md-7 py-4">
+                    <h4 class="text-white">About</h4>
+                    <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+                    </div>
+                    <div class="col-sm-4 offset-md-1 py-4">
+                    <h4 class="text-white">Contact</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Follow on Twitter</a></li>
+                        <li><a href="#" class="text-white">Like on Facebook</a></li>
+                        <li><a href="#" class="text-white">Email me</a></li>
+                    </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="navbar navbar-dark bg-dark shadow-sm">
+                <div class="container" style="margin:10px;">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation" onclick="displayBrowseView()">
+                    <strong>Return</strong>
+                </button>
+                </div>
+            </div>
+        </header>
 
         <!-- BOOTSTRAP INDEX -->
         <div class="container">
             <main>
                 <div class="py-5 text-center">
-                <!-- <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
-                <h2>Checkout form</h2>
-                <!-- <p class="lead">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p> -->
                 </div>
 
                 <div class="row g-5">
@@ -479,20 +503,20 @@
 
                     <hr class="my-4">
 
-                    <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
+                    <button class="w-100 btn btn-primary btn-lg" type="submit" onclick="displayConfirmationView()">Continue to checkout</button>
                     </form>
                 </div>
                 </div>
             </main>
 
-            <footer class="my-5 pt-5 text-muted text-center text-small">
+            <!-- <footer class="my-5 pt-5 text-muted text-center text-small">
                 <p class="mb-1">&copy; 2017–2022 Company Name</p>
                 <ul class="list-inline">
                 <li class="list-inline-item"><a href="#">Privacy</a></li>
                 <li class="list-inline-item"><a href="#">Terms</a></li>
                 <li class="list-inline-item"><a href="#">Support</a></li>
                 </ul>
-            </footer>
+            </footer> -->
         </div>
 
         <!-- BOOTSTRAP CHECKOUT SCRIPTS? -->

@@ -1,3 +1,15 @@
+var firstName, lastName, creditCard, email, address, address2, state, zip;
+
+function getInput() {
+  firstName = document.getElementById("firstName"). value;
+  lastName = document.getElementById("lastName"). value;
+  creditCard = document.getElementById("cc-number").value;
+  email = document.getElementById("email").value;
+  address = document.getElementById("address").value;
+  address2 = document.getElementById("address2").value;
+  state = document.getElementById("state").value;
+  zip = document.getElementById("zip").value;
+}
 
 function displayBrowseView() {
   clearCartView();
@@ -136,6 +148,18 @@ function updateConfirmationView()
   strong.textContent = "$" + Number(totalCost).toFixed(2);
   li.appendChild(strong);
   ul.appendChild(li);
+
+  updatePersonalInfo();
+}
+
+function updatePersonalInfo()
+{
+  getInput();
+  
+  document.getElementById("fullName").textContent = firstName + " " + lastName;
+  document.getElementById("creditCard").textContent = "XXXX-XXXX-XXXX-" + creditCard.substr(creditCard.length - 4);
+  document.getElementById("addressInfo").textContent = address + " " + address2 + ", " + state + ", " + zip;
+  document.getElementById("emailAddress").textContent = email;
 }
 
 function clearConfirmationView()

@@ -70,12 +70,8 @@
     </style>
 </head>
 <body>
-    <!-- WE MIGHT WANT TO USE A JSON FILE TO HOLD IMG/PRICE/DESCRIPTION -->
-
     <!-- BROWSE VIEW PAGE -->
     <div id="BrowseView" style="display:block;">
-        <!-- FOR AN EXAMPLE OF CHANGING PAGES -->
-        <!-- <a class="navbar-brand" href="#home" onclick="goHome();">DHT11 Server</a> -->
 
         <!-- BOOTSTRAP INDEX -->
         <header>
@@ -221,52 +217,6 @@
                         </div>
                     </div>
                     </div>
-
-                    <!-- <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-                        <div class="card-body">
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                            </div>
-                            <small class="text-muted">9 mins</small>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                    <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-                        <div class="card-body">
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                            </div>
-                            <small class="text-muted">9 mins</small>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                    <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-                        <div class="card-body">
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                            </div>
-                            <small class="text-muted">9 mins</small>
-                        </div>
-                        </div>
-                    </div>
-                    </div> -->
                 </div>
                 </div>
             </div>
@@ -339,12 +289,6 @@
                     <ul class="list-group mb-3" id="list">
                     </ul>
 
-                    <!-- <form class="card p-2">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Promo code">
-                        <button type="submit" class="btn btn-secondary">Redeem</button>
-                    </div>
-                    </form> -->
                 </div>
                 <div class="col-md-7 col-lg-8">
                     <h4 class="mb-3">Billing address</h4>
@@ -425,11 +369,6 @@
                         <input type="checkbox" class="form-check-input" id="same-address">
                         <label class="form-check-label" for="same-address">Shipping address is the same as my billing address</label>
                     </div>
-
-                    <!-- <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="save-info">
-                        <label class="form-check-label" for="save-info">Save this information for next time</label>
-                    </div> -->
 
                     <hr class="my-4">
 
@@ -528,7 +467,7 @@
             </div>
             <div class="navbar navbar-dark bg-dark shadow-sm">
                 <div class="container">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation" onclick="displayCartView()">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation" onclick="displayCartView()" disabled>
                     <img src="images/shoppingcart.png" alt="Shopping Cart" style="width: 60px; height: 40px;">
                     <strong>0</strong>
                 </button>
@@ -552,18 +491,23 @@
                     </ul>
                     <div class="row gy-3">
                         <div class="col-md-6">
-                            <span class="form-label">Full name</span>
-                            <small class="text-muted" id="fullName">Full name as displayed on card</small>
+                            <span class="form-label">Name</span>
+                            <small class="text-muted" id="fullName">Joe Smith</small>
                         </div>
 
                         <div class="col-md-6">
-                            <span class="form-label">Credit card number</span>
-                            <small class="text-muted" id="creditCard">XXXX-XXXX-XXXX-1234</small>
+                            <span class="form-label">Email</span>
+                            <small class="text-muted" id="emailAddress">you@example.com</small>
                         </div>
 
                         <div class="col-md-6">
-                            <span class="form-label">Ligma</span>
-                            <small class="text-muted" id="fullName">Brian will be goblin on my nuts fo sho</small>
+                            <span class="form-label">Credit card</span>
+                            <small class="text-muted" id="creditCard"></small>
+                        </div>
+
+                        <div class="col-md-6">
+                            <span class="form-label">Address</span>
+                            <small class="text-muted" id="addressInfo"></small>
                         </div>
 
                         <div class="col-md-6">
